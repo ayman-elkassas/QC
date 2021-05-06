@@ -18,12 +18,65 @@
           <img src="~assets/dashboard/logo/logo.png" alt="avatar" />
         </nuxt-link>
       </template>
-      <vs-sidebar-item id="home">
+      <vs-sidebar-item id="home" to="/">
         <template #icon>
           <i class="bx bx-home"></i>
         </template>
         Home
       </vs-sidebar-item>
+      <vs-sidebar-group>
+        <template #header>
+          <vs-sidebar-item arrow>
+            <template #icon>
+              <i class="bx bxs-user-account"></i>
+            </template>
+            Role Management
+          </vs-sidebar-item>
+        </template>
+
+        <vs-sidebar-item id="role" to="/role">
+          <template #icon>
+            <i class="bx bx-user"></i>
+          </template>
+          Roles
+        </vs-sidebar-item>
+        <vs-sidebar-item id="permission">
+          <template #icon>
+            <i class="bx bx-key"></i>
+          </template>
+          Permissions
+        </vs-sidebar-item>
+        <vs-sidebar-item id="assign">
+          <template #icon>
+            <i class="bx bx-add-to-queue"></i>
+          </template>
+          Assign R-T-P
+        </vs-sidebar-item>
+      </vs-sidebar-group>
+      <vs-sidebar-group>
+        <template #header>
+          <vs-sidebar-item arrow>
+            <template #icon>
+              <i class="bx bx-group"></i>
+            </template>
+            Accounts
+          </vs-sidebar-item>
+        </template>
+
+        <vs-sidebar-item id="admin">
+          <template #icon>
+            <i class="bx bx-user"></i>
+          </template>
+          Admin Account
+        </vs-sidebar-item>
+        <vs-sidebar-item id="user">
+          <template #icon>
+            <i class="bx bx-user-circle"></i>
+          </template>
+          User Account
+        </vs-sidebar-item>
+      </vs-sidebar-group>
+
       <vs-sidebar-item id="market">
         <template #icon>
           <i class="bx bx-grid-alt"></i>
@@ -36,35 +89,6 @@
         </template>
         Music
       </vs-sidebar-item>
-      <vs-sidebar-group>
-        <template #header>
-          <vs-sidebar-item arrow>
-            <template #icon>
-              <i class="bx bx-group"></i>
-            </template>
-            Social media
-          </vs-sidebar-item>
-        </template>
-
-        <vs-sidebar-item id="Instagram">
-          <template #icon>
-            <i class="bx bxl-instagram"></i>
-          </template>
-          Instagram
-        </vs-sidebar-item>
-        <vs-sidebar-item id="twitter">
-          <template #icon>
-            <i class="bx bxl-twitter"></i>
-          </template>
-          Twitter
-        </vs-sidebar-item>
-        <vs-sidebar-item id="Facebook">
-          <template #icon>
-            <i class="bx bxl-facebook"></i>
-          </template>
-          Facebook
-        </vs-sidebar-item>
-      </vs-sidebar-group>
       <vs-sidebar-group>
         <template #header>
           <vs-sidebar-item arrow>

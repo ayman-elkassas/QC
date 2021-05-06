@@ -8,7 +8,16 @@
     <home-header></home-header>
     <home-sidebar></home-sidebar>
 
-    <nuxt></nuxt>
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-body">
+          <nuxt></nuxt>
+        </div>
+      </div>
+    </div>
 
     <home-footer></home-footer>
   </div>

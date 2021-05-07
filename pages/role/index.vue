@@ -9,8 +9,7 @@
               class="text-primary"
               href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layout-empty.html"
               target="_blank"
-              >Layout empty documentation</a
-            >&nbsp; for more details.
+              >Layout empty documentation</a>&nbsp; for more details.
           </div>
         </div>
       </div>

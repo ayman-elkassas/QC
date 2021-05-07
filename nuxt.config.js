@@ -21,9 +21,6 @@ export default {
       {src: "home/dashboard/app-assets/js/core/app.js"},
 
       {src: "home/dashboard/feather.js"},
-
-      //page:
-      {src: "home/dashboard/app-assets/js/scripts/pages/dashboard-analytics.js"},
     ],
   },
 
@@ -42,14 +39,12 @@ export default {
     {src:'~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.min.css'},
     {src:'~static/home/dashboard/app-assets/css/themes/semi-dark-layout.css'},
 
-    //page:
-    {src:'~static/home/dashboard/app-assets/css/plugins/charts/chart-apex.css'},
-
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/vuesax',
+    '@/plugins/datepicker',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -60,7 +55,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     ['@nuxtjs/eslint-module', {
       fix: true
-    }]
+    }],
+    ['@nuxtjs/tailwindcss']
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -40,7 +40,7 @@
           </template>
           Roles
         </vs-sidebar-item>
-        <vs-sidebar-item id="permission">
+        <vs-sidebar-item id="permission" to="/role/permission">
           <template #icon>
             <i class="bx bx-key"></i>
           </template>
@@ -77,11 +77,11 @@
         </vs-sidebar-item>
       </vs-sidebar-group>
 
-      <vs-sidebar-item id="market">
+      <vs-sidebar-item id="protocol" to="/protocol">
         <template #icon>
           <i class="bx bx-grid-alt"></i>
         </template>
-        Market Overview
+        Protocols
       </vs-sidebar-item>
       <vs-sidebar-item id="Music">
         <template #icon>
@@ -162,7 +162,7 @@
               alt=""
             />
           </vs-avatar>
-          <vs-avatar warn badge-color="success">
+          <vs-avatar warn badge-color="success" @click="flag = !flag">
             <i class="bx bx-bell"></i>
 
             <template #badge> 28 </template>

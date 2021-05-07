@@ -1,5 +1,4 @@
 <template>
-  <!--            card-->
   <div class="card card-project shadow-sm bg-white">
     <div class="progress">
       <div

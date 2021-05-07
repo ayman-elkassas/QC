@@ -19,6 +19,9 @@ export default {
       {src: "home/dashboard/app-assets/vendors/js/vendors.min.js"},
       {src: "home/dashboard/app-assets/js/core/app-menu.js"},
       {src: "home/dashboard/app-assets/js/core/app.js"},
+      {src: "home/dashboard/app-assets/js/scripts/pages/app-todo.min.js"},
+      {src: "home/protocol/js/swap-animation.js"},
+      {src: "home/protocol/js/draggable.bundle.legacy.js"},
 
       {src: "home/dashboard/feather.js"},
     ],

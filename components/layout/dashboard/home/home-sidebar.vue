@@ -83,11 +83,11 @@
         </template>
         Protocols
       </vs-sidebar-item>
-      <vs-sidebar-item id="Music">
+      <vs-sidebar-item id="template" to="/template/">
         <template #icon>
-          <i class="bx bxs-music"></i>
+          <i class="bx bx-file"></i>
         </template>
-        Music
+        Templates
       </vs-sidebar-item>
       <vs-sidebar-group>
         <template #header>

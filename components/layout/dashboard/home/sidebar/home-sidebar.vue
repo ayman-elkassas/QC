@@ -17,7 +17,7 @@
         <nuxt-link to="/">
           <img src="~assets/dashboard/logo/logo.png" alt="avatar" />
         </nuxt-link>
-        {{ $device.isMobile ? collapse() : null }}
+        <!--        {{ $device.isMobile ? collapse() : null }}-->
       </template>
 
       <div v-for="item in menuContainer" :key="item.id">

@@ -21,8 +21,9 @@
                 data-toggle="tooltip"
                 data-placement="top"
                 title="Email"
-                ><i class="ficon" data-feather="mail"></i
-              ></a>
+              >
+                <i class="ficon" data-feather="sidebar"></i>
+              </a>
             </li>
             <li class="nav-item d-none d-lg-block">
               <a

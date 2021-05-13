@@ -8,6 +8,13 @@ export default {
     flag: false,
     menuContainer: menu,
   }),
+  created() {
+    if (process.client) {
+      if (window.innerWidth < 700) {
+        this.collapse()
+      }
+    }
+  },
   methods: {
     collapse() {
       this.flag = !this.flag

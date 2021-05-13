@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  // mode:'spa',
   head: {
     title: 'Qsee',
     htmlAttrs: {
@@ -84,5 +85,9 @@ export default {
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     },
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) { }
   },
 }

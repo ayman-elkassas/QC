@@ -1,9 +1,11 @@
 <template>
   <div
+    id="target"
+    ref="target"
     data-open="click"
     data-menu="vertical-menu-modern"
     data-col=""
-    class="vertical-layout vertical-menu-modern footer-static menu-expanded pace-done navbar-sticky"
+    class="center vertical-layout vertical-menu-modern footer-static menu-expanded pace-done navbar-sticky"
   >
     <home-header></home-header>
     <home-sidebar></home-sidebar>

@@ -34,7 +34,7 @@
               />
               <div class="avatar avatar-xl bg-primary shadow">
                 <div class="avatar-content">
-                  <i data-feather="award" class="font-large-1"></i>
+                  <i class="bx bx-user"></i>
                 </div>
               </div>
               <div class="text-center">
@@ -189,6 +189,36 @@ export default {
   name: 'Index',
   components: {},
   layout: 'dashboard/home',
+  data() {
+    return {
+      progress: 0,
+      color: '#7a76cb',
+    }
+  },
+  created() {
+    if (!process.server) {
+      // this.openLoading()
+    }
+  },
+  methods: {
+    openLoading() {
+      const loading = this.$vs.loading({
+        progress: this.progress,
+        background: this.color,
+        color: '#fff',
+      })
+      const interval = setInterval(() => {
+        if (this.progress <= 100) {
+          loading.changeProgress(`${this.progress++}%`)
+        }
+      }, 40)
+      setTimeout(() => {
+        loading.close()
+        clearInterval(interval)
+        this.progress = 0
+      }, 4100)
+    },
+  },
 }
 </script>
 

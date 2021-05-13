@@ -66,7 +66,7 @@
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .navbar .navbar-header {
   float: left;
-  width: 80px; }
+  width: 50px; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .navbar .navbar-header .modern-nav-toggle {
   display: none; }
@@ -79,10 +79,10 @@
   display: block; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .navbar.fixed-top {
-  left: 80px; }
+  left: 50px; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .main-menu {
-  width: 80px; }
+  width: 50px; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .main-menu .navbar-header .brand-text,
 .vertical-layout.vertical-menu-modern.menu-collapsed .main-menu .modern-nav-toggle {
@@ -152,7 +152,7 @@
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .app-content,
 .vertical-layout.vertical-menu-modern.menu-collapsed .footer {
-  margin-left: 80px; }
+  margin-left: 50px; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .header-navbar.floating-nav {
   width: calc(100vw - (100vw - 100%) - 4.4rem - 74px); }

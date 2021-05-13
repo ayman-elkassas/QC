@@ -5,6 +5,7 @@
 <script>
 export default {
   name: 'AssignRolePermission',
+  layout:'dashboard/home'
 }
 </script>
 

@@ -204,27 +204,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Login',
-  head: {
-    script: [
-      {
-        src: 'home/dashboard/app-assets/js/scripts/pages/page-auth-login.js',
-      },
-    ],
-  },
-  methods: {
-    redirect() {
-      // when auth $axios login Api
-      // this.$router.push({ path: '/' })
-
-      // now
-      window.location = '/'
-    },
-  },
-}
-</script>
+<script src="../../static/scripts/auth/login.js"></script>
 
 <style scoped>
 @import '~static/home/dashboard/app-assets/css/plugins/forms/form-validation.css';

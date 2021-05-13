@@ -25,7 +25,7 @@
 
 <script>
 import HomeHeader from '@/components/layout/dashboard/home/home-header'
-import HomeSidebar from '@/components/layout/dashboard/home/home-sidebar'
+import HomeSidebar from '@/components/layout/dashboard/home/sidebar/home-sidebar'
 import HomeFooter from '@/components/layout/dashboard/home/home-footer'
 export default {
   name: 'Home',

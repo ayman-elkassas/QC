@@ -17,19 +17,16 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
-      {src: "home/dashboard/app-assets/vendors/js/vendors.min.js"},
-      {src: "home/dashboard/app-assets/js/core/app-menu.js"},
-      {src: "home/dashboard/app-assets/js/core/app.js"},
-      {src: "home/dashboard/app-assets/js/scripts/pages/app-todo.min.js"},
-      {src: "home/protocol/js/swap-animation.js"},
-      {src: "home/protocol/js/draggable.bundle.legacy.js"},
+      { src: 'home/dashboard/app-assets/vendors/js/vendors.min.js' },
+      { src: 'home/dashboard/app-assets/js/core/app-menu.js' },
+      { src: 'home/dashboard/app-assets/js/core/app.js' },
+      { src: 'home/dashboard/app-assets/js/scripts/pages/app-todo.min.js' },
+      { src: 'home/protocol/js/swap-animation.js' },
+      { src: 'home/protocol/js/draggable.bundle.legacy.js' },
 
-      {src: "home/dashboard/feather.js"},
+      { src: 'home/dashboard/feather.js' },
     ],
   },
 
@@ -37,24 +34,25 @@ export default {
   css: [
     'vuesax/dist/vuesax.css',
 
-    //todo:home assets
-    {src:'~assets/dashboard/app-assets/vendors/css/vendors.min.css'},
+    // todo:home assets
+    { src: '~assets/dashboard/app-assets/vendors/css/vendors.min.css' },
 
-    {src:'~static/home/dashboard/assets/css/style.css'},
-    {src:'~static/home/dashboard/app-assets/css/bootstrap.css'},
-    {src:'~static/home/dashboard/app-assets/css/bootstrap-extended.css'},
-    {src:'~static/home/dashboard/app-assets/css/colors.css'},
-    {src:'~static/home/dashboard/app-assets/css/components.css'},
-    {src:'~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css'},
-    {src:'~static/home/dashboard/app-assets/css/themes/semi-dark-layout.css'},
-
+    { src: '~static/home/dashboard/assets/css/style.css' },
+    { src: '~static/home/dashboard/app-assets/css/bootstrap.css' },
+    { src: '~static/home/dashboard/app-assets/css/bootstrap-extended.css' },
+    { src: '~static/home/dashboard/app-assets/css/colors.css' },
+    { src: '~static/home/dashboard/app-assets/css/components.css' },
+    {
+      src:
+        '~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css',
+    },
+    {
+      src: '~static/home/dashboard/app-assets/css/themes/semi-dark-layout.css',
+    },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/plugins/vuesax',
-    '@/plugins/datepicker',
-  ],
+  plugins: ['@/plugins/vuesax', '@/plugins/datepicker'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -62,10 +60,14 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    ['@nuxtjs/eslint-module', {
-      fix: true
-    }],
-    ['@nuxtjs/tailwindcss']
+    [
+      '@nuxtjs/eslint-module',
+      {
+        fix: true,
+      },
+    ],
+    ['@nuxtjs/tailwindcss'],
+    ['@nuxtjs/device'],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

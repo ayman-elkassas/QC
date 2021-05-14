@@ -1,0 +1,6 @@
+git add .
+git commit -m "done"
+heroku plugins:install heroku-builds
+heroku builds:cancel
+heroku restart
+git push heroku main

@@ -16,12 +16,12 @@
         <nuxt-link to="/">
           <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
         </nuxt-link>
-        <i
-          v-if="mobile"
-          class="bx bxs-toggle-left"
-          style="align-content: end; margin-left: 40px; font-size: 35px"
-          @click="collapse()"
-        ></i>
+<!--        <i-->
+<!--          v-if="mobile"-->
+<!--          class="bx bxs-toggle-left"-->
+<!--          style="align-content: end; margin-left: 40px; font-size: 35px"-->
+<!--          @click="collapse()"-->
+<!--        ></i>-->
       </template>
 
       <div v-for="item in menuContainer" :key="item.id">

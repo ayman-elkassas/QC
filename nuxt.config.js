@@ -8,7 +8,7 @@ export default {
     },
     bodyAttrs: {
       class:
-        'vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static',
+        'vertical-layout vertical-menu-modern 2-columns navbar-floating footer-static',
       'data-open': 'click',
       'data-menu': 'vertical-menu-modern',
       'data-col': '2-columns',
@@ -26,7 +26,6 @@ export default {
       { src: 'home/dashboard/app-assets/js/scripts/pages/app-todo.min.js' },
       { src: 'home/protocol/js/swap-animation.js' },
       { src: 'home/protocol/js/draggable.bundle.legacy.js' },
-
       { src: 'home/dashboard/feather.js' },
     ],
   },
@@ -38,6 +37,7 @@ export default {
     // todo:home assets
     { src: '~assets/dashboard/app-assets/vendors/css/vendors.min.css' },
 
+    //todo:home static
     { src: '~static/home/dashboard/assets/css/style.css' },
     { src: '~static/home/dashboard/app-assets/css/bootstrap.css' },
     { src: '~static/home/dashboard/app-assets/css/bootstrap-extended.css' },
@@ -61,14 +61,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    [
-      '@nuxtjs/eslint-module',
-      {
-        fix: true,
-      },
-    ],
+    ['@nuxtjs/eslint-module', {fix: true}],
     ['@nuxtjs/tailwindcss'],
-    ['@nuxtjs/device'],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

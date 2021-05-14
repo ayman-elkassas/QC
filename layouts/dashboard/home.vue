@@ -7,7 +7,7 @@
     data-col=""
     class="center vertical-layout vertical-menu-modern footer-static menu-expanded pace-done navbar-sticky"
   >
-    <home-header></home-header>
+    <!--    <home-header></home-header>-->
     <home-sidebar></home-sidebar>
 
     <!-- BEGIN: Content-->
@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import HomeHeader from '@/components/layout/dashboard/home/home-header'
+// import HomeHeader from '@/components/layout/dashboard/home/header/home-header'
 import HomeSidebar from '@/components/layout/dashboard/home/sidebar/home-sidebar'
 import HomeFooter from '@/components/layout/dashboard/home/home-footer'
 export default {
   name: 'Home',
-  components: { HomeFooter, HomeSidebar, HomeHeader },
+  components: { HomeFooter, HomeSidebar },
 }
 </script>
 

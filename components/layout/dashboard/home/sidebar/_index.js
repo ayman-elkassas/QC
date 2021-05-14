@@ -1,18 +1,18 @@
 import $ from 'jquery'
+import HomeHeader from '@/components/layout/dashboard/home/header/home-header'
 import { menu } from '~/data/menu'
 
 export default {
   name: 'HomeSidebar',
+  components: { HomeHeader },
   data: () => ({
     active: 'home',
     flag: false,
     menuContainer: menu,
   }),
   created() {
-    if (process.client) {
-      if (window.innerWidth < 700) {
-        this.collapse()
-      }
+    if (process.client && window.innerWidth < 700) {
+      this.collapse()
     }
   },
   methods: {

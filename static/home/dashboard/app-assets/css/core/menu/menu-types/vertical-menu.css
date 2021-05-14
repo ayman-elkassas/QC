@@ -152,10 +152,10 @@
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .app-content,
 .vertical-layout.vertical-menu-modern.menu-collapsed .footer {
-  margin-left: 50px; }
+  margin-left: 4px; }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .header-navbar.floating-nav {
-  width: calc(100vw - (100vw - 100%) - 4.4rem - 74px); }
+  width: calc(100vw - (100vw - 100%) - 4.4rem - 0px); }
 
 .vertical-layout.vertical-menu-modern.menu-collapsed .header-navbar.navbar-static-top {
   width: calc(100vw - (100vw - 100%) - 74px);

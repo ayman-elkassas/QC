@@ -2,25 +2,25 @@
   <div>
     <!-- BEGIN: Header-->
     <nav
-      class="header-navbar navbar navbar-expand-lg align-items-center navbar-light navbar-shadow fixed-top"
+      class="header-navbar navbar navbar-expand-lg align-items-center navbar-light navbar-shadow floating-nav"
     >
       <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
           <ul class="nav navbar-nav d-xl-none">
-            <li class="nav-item">
-              <a class="nav-link menu-toggle" href="javascript:void(0);"
-                ><i class="ficon" data-feather="menu"></i
-              ></a>
+            <li class="nav-item" @click="$parent.collapse()">
+              <a class="nav-link menu-toggle">
+                <i class="ficon" data-feather="menu"></i>
+              </a>
             </li>
           </ul>
+
           <ul class="nav navbar-nav bookmark-icons">
-            <li class="nav-item d-none d-lg-block">
+            <li class="nav-item d-none d-lg-block" @click="$parent.collapse()">
               <a
                 class="nav-link"
-                href="app-email.html"
                 data-toggle="tooltip"
                 data-placement="top"
-                title="Email"
+                title="Toggle-m"
               >
                 <i class="ficon" data-feather="sidebar"></i>
               </a>
@@ -123,7 +123,9 @@
               ><i class="ficon" data-feather="search"></i
             ></a>
             <div class="search-input">
-              <div class="search-input-icon"><i data-feather="search"></i></div>
+              <div class="search-input-icon">
+                <i data-feather="search"></i>
+              </div>
               <input
                 class="form-control input"
                 type="text"
@@ -710,13 +712,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomeHeader',
-  data: () => ({
-    active: 'guide',
-  }),
-}
-</script>
+<script src="./_index.js"></script>
 
 <style scoped></style>

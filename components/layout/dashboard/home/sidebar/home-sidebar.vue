@@ -3,15 +3,14 @@
   <!--  background="#283046"-->
   <!--  text-white-->
   <div>
+    <home-header></home-header>
     <vs-sidebar
       v-model="active"
       background="#283046"
       text-white
       color="#7367F0"
       style="border-radius: 0px"
-      open
-      not-shadow
-      :reduce="flag"
+      :open="!flag"
     >
       <template #logo>
         <nuxt-link to="/">

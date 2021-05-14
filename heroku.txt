@@ -1,5 +1,9 @@
 git add .
 git commit -m "done"
+
+heroku login
+heroku create
+
 heroku plugins:install heroku-builds
 heroku builds:cancel
 heroku restart

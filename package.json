@@ -24,6 +24,7 @@
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
     "nuxt-fontawesome": "^0.4.0",
+    "postcss-svgo": "^5.0.0",
     "sass-loader": "^10.1.1",
     "vuesax": "^4.0.1-alpha.25"
   },

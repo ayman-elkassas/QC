@@ -42,7 +42,7 @@ export default {
     { src: '~static/home/dashboard/app-assets/css/bootstrap.css' },
     { src: '~static/home/dashboard/app-assets/css/bootstrap-extended.css' },
     { src: '~static/home/dashboard/app-assets/css/colors.css' },
-    { src: '~assets/components.css' },
+    { src: '~static/home/dashboard/app-assets/css/components.css' },
     {
       src:
         '~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css',

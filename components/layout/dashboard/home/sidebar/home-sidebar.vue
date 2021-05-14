@@ -12,16 +12,17 @@
       style="border-radius: 0px"
       :open="!flag"
     >
-      <template #logo>
+      <template v-if="!mobile" #logo>
         <nuxt-link to="/">
           <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
         </nuxt-link>
-<!--        <i-->
-<!--          v-if="mobile"-->
-<!--          class="bx bxs-toggle-left"-->
-<!--          style="align-content: end; margin-left: 40px; font-size: 35px"-->
-<!--          @click="collapse()"-->
-<!--        ></i>-->
+      </template>
+      <template v-else #logo>
+        <i
+          class="bx bxs-toggle-left"
+          style="font-size: 35px"
+          @click="collapse()"
+        ></i>
       </template>
 
       <div v-for="item in menuContainer" :key="item.id">

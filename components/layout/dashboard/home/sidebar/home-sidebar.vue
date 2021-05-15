@@ -16,11 +16,15 @@
         <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
       </template>
       <template v-else #logo>
-        <i
-          class="bx bxs-toggle-left"
-          style="font-size: 35px"
-          @click="collapse()"
-        ></i>
+        <vs-row>
+          <vs-col offset="7" w="5">
+            <i
+              class="bx bx-sidebar"
+              style="font-size: 25px; margin-left: 50px"
+              @click="collapse()"
+            ></i>
+          </vs-col>
+        </vs-row>
       </template>
 
       <div v-for="item in menuContainer" :key="item.id">

@@ -8,12 +8,12 @@ export default {
   data: () => ({
     active: 'home',
     flag: false,
-    mobile: false,
+    client: process.client,
+    mobile: process.client && window.innerWidth < 700,
     menuContainer: menu,
   }),
-  created() {
-    if (process.client && window.innerWidth < 700) {
-      this.mobile = true
+  mounted() {
+    if (this.mobile) {
       this.collapse()
     }
   },

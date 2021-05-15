@@ -30,6 +30,10 @@ export default {
     ],
   },
 
+  router: {
+    mode: 'hash'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'vuesax/dist/vuesax.css',

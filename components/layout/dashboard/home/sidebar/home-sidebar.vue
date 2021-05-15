@@ -12,13 +12,12 @@
       style="border-radius: 0px"
       :open="!flag"
     >
-      <template v-if="!mobile && process.client" #logo>
-        <nuxt-link to="/">
+      <template #logo>
+        <nuxt-link v-if="!mobile" to="/">
           <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
         </nuxt-link>
-      </template>
-      <template v-else #logo>
         <i
+          v-else
           class="bx bxs-toggle-left"
           style="font-size: 35px"
           @click="collapse()"

@@ -13,9 +13,7 @@
       :open="!flag"
     >
       <template v-if="!mobile" #logo>
-        <nuxt-link to="/">
-          <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
-        </nuxt-link>
+        <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
       </template>
       <template v-else #logo>
         <i

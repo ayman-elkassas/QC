@@ -12,7 +12,7 @@
       style="border-radius: 0px"
       :open="!flag"
     >
-      <template v-if="!mobile" #logo>
+      <template v-if="!mobile && process.client" #logo>
         <nuxt-link to="/">
           <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
         </nuxt-link>

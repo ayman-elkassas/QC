@@ -13,11 +13,13 @@
       :open="!flag"
     >
       <template #logo>
-        <nuxt-link v-if="!mobile" to="/">
-          <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
-        </nuxt-link>
+        <no-ssr>
+          <nuxt-link v-if="!mobile" to="/">
+            <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
+          </nuxt-link>
+        </no-ssr>
         <i
-          v-else
+          v-if="mobile"
           class="bx bxs-toggle-left"
           style="font-size: 35px"
           @click="collapse()"

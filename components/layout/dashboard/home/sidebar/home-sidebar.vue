@@ -18,7 +18,7 @@
       <template v-else #logo>
         <i
           class="bx bx-sidebar"
-          style="font-size: 25px; margin-left: 50px"
+          style="font-size: 25px"
           @click="collapse()"
         ></i>
       </template>

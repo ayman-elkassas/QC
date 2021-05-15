@@ -13,17 +13,19 @@
       :open="!flag"
     >
       <template #logo>
-        <no-ssr>
-          <nuxt-link v-if="!mobile" to="/">
-            <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
-          </nuxt-link>
-        </no-ssr>
-        <i
-          v-if="mobile"
-          class="bx bxs-toggle-left"
-          style="font-size: 35px"
-          @click="collapse()"
-        ></i>
+        <div>
+          <no-ssr>
+            <nuxt-link v-if="!mobile" to="/">
+              <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
+            </nuxt-link>
+          </no-ssr>
+          <i
+            v-if="mobile"
+            class="bx bxs-toggle-left"
+            style="font-size: 35px"
+            @click="collapse()"
+          ></i>
+        </div>
       </template>
 
       <div v-for="item in menuContainer" :key="item.id">

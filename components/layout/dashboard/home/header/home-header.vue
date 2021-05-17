@@ -508,11 +508,8 @@
                 ><i class="mr-50" data-feather="credit-card"></i> Pricing</a
               ><a class="dropdown-item" href="page-faq.html"
                 ><i class="mr-50" data-feather="help-circle"></i> FAQ</a
-              ><nuxt-link
-                to="/auth/login"
-                class="dropdown-item"
-                href="page-auth-login-v2.html"
-                ><i class="mr-50" data-feather="power"></i> Logout</nuxt-link
+              ><a class="dropdown-item" @click="logout()"
+                ><i class="mr-50" data-feather="power"></i> Logout</a
               >
             </div>
           </li>

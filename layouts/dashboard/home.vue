@@ -32,6 +32,8 @@ import HomeFooter from '@/components/layout/dashboard/home/home-footer'
 export default {
   name: 'Home',
   components: { HomeFooter, HomeSidebar },
+  middleware: 'auth',
+  // middleware: 'auth/authenticate',
 }
 </script>
 

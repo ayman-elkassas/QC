@@ -1,6 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   // mode:'spa',
+  // render:{
+  //   ssr:false
+  // },
   head: {
     title: 'Qsee',
     htmlAttrs: {
@@ -20,18 +23,24 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
-      { src: 'home/dashboard/app-assets/vendors/js/vendors.min.js' },
-      { src: 'home/dashboard/app-assets/js/core/app-menu.js' },
-      { src: 'home/dashboard/app-assets/js/core/app.js' },
-      { src: 'home/dashboard/app-assets/js/scripts/pages/app-todo.min.js' },
-      { src: 'home/protocol/js/swap-animation.js' },
-      { src: 'home/protocol/js/draggable.bundle.legacy.js' },
-      { src: 'home/dashboard/feather.js' },
+      { src: '/home/dashboard/app-assets/vendors/js/vendors.min.js'},
+      { src: '/home/dashboard/app-assets/js/core/app-menu.js'},
+      { src: '/home/dashboard/app-assets/js/core/app.js'},
+      { src: '/home/dashboard/feather.js'},
     ],
   },
 
+  serverMiddleware:[
+    //{path:'/',handler:'~/server_middleware/routes/trailingSlashRedirect.js'}
+  ],
+
+  env:{
+
+  },
+
   router: {
-    mode: 'hash'
+    // trailingSlash: false,
+    // middleware: 'routes/trailingSlashRedirect',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -47,17 +56,16 @@ export default {
     { src: '~static/home/dashboard/app-assets/css/bootstrap-extended.css' },
     { src: '~static/home/dashboard/app-assets/css/colors.css' },
     { src: '~static/home/dashboard/app-assets/css/components.css' },
-    {
-      src:
-        '~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css',
-    },
-    {
-      src: '~static/home/dashboard/app-assets/css/themes/semi-dark-layout.css',
-    },
+    {src: '~static/home/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css'},
+    {src: '~static/home/dashboard/app-assets/css/themes/semi-dark-layout.css'},
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/vuesax', '@/plugins/datepicker'],
+  plugins: [
+    // { src: '~/plugins/vendors.min.js', mode: 'client' },
+    '@/plugins/vuesax',
+    '@/plugins/datepicker',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -73,19 +81,84 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
+    // With options
+    // 'nuxt-trailingslash-module',
+    [
+      'nuxt-global-var',
+      {
+        data: {
+          AppName:'Qsee',
+          PREFIX: 'http://127.0.0.1:8000/storage',
+        }
+      }
+    ]
   ],
+  // trailingslash: {
+  //   methods: [
+  //     'GET',
+  //     'HEAD',
+  //   ],
+  // },
+  // redirect: [
+  //   // Redirect options here
+  //   {
+  //     // eslint-disable-next-line
+  //     from: '(?!^\/$|^\/[?].*$)(.*\/[?](.*)$|.*\/$)',
+  //     to: (from, req) => {
+  //       const base = req._parsedUrl.pathname.replace(/\/$/, '');
+  //       const search = req._parsedUrl.search;
+  //       return base + (search != null ? search : '');
+  //     }
+  //   },
+  //   // {
+  //   //   from: '^.*(?<!\/)$',
+  //   //   to: (from, req) => req.url + '/'
+  //   // }
+  // ],
+  //todo: this is right way auth syntax
+  auth:{
+    strategies:{
+      'laravelJWT':{
+        provider: 'users',
+        url: '/api',
+        endpoints:{
+          login:{url:"/auth/login/",method:'post',propertyName:'false'},
+          user: { url: '/auth/user/', method: 'get', propertyName: 'false' },
+          logout: { url: '/auth/logout/', method: 'post',propertyName: 'false' }
+        },
+        token: {
+          property: 'token',
+          maxAge: 10080
+        },
+        refreshToken: {
+          maxAge: 20160 * 60
+        },
+      }
+    },
+    redirect:{
+      login:'/auth/login/',
+      home:'/'
+    },
+    fullPathRedirect: true,
+    rewriteRedirects: true,
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL:"http://127.0.0.1:8000",
+    // baseURL:"https://Qsee-Server.herokuapp.com",
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     },
+    extractCSS:true,
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) { },
   },
 }

@@ -34,13 +34,14 @@
                 </div>
               </div>
               <!-- /Left Text-->
+
               <!-- Login-->
               <div
                 class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5"
               >
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                   <h2 class="card-title font-weight-bold mb-1">
-                    Welcome to Qsee 👋
+                    Welcome to {{ $get('AppName') }} 👋
                   </h2>
                   <p class="card-text mb-2">
                     Please sign-in to your account and start the adventure
@@ -52,10 +53,11 @@
                       class="form-control"
                       type="text"
                       name="login-email"
-                      placeholder="john@example.com"
+                      placeholder="name@example.com"
                       aria-describedby="login-email"
                       autofocus=""
                       tabindex="1"
+                      v-model="request.email"
                     />
                   </div>
                   <div class="form-group">
@@ -76,6 +78,7 @@
                         placeholder="············"
                         aria-describedby="login-password"
                         tabindex="2"
+                        v-model="request.password"
                       />
                       <div class="input-group-append">
                         <span class="input-group-text cursor-pointer"
@@ -100,7 +103,7 @@
                   <button
                     class="btn btn-primary btn-block"
                     tabindex="4"
-                    @click="redirect()"
+                    @click="login()"
                   >
                     Sign In
                   </button>
@@ -113,6 +116,7 @@
                 </div>
               </div>
               <!-- /Login-->
+
             </div>
           </div>
         </div>

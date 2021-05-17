@@ -187,7 +187,6 @@
 <script>
 export default {
   name: 'Index',
-  components: {},
   layout: 'dashboard/home',
   data() {
     return {
@@ -195,11 +194,13 @@ export default {
       color: '#7a76cb',
     }
   },
+  head() {},
   created() {
     if (!process.server) {
       // this.openLoading()
     }
   },
+  mounted() {},
   methods: {
     openLoading() {
       const loading = this.$vs.loading({

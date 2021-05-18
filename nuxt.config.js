@@ -5,7 +5,7 @@ export default {
   //   ssr:false
   // },
   head: {
-    title: 'Qsee',
+    title: 'Quality Management',
     htmlAttrs: {
       lang: 'en',
     },
@@ -35,7 +35,6 @@ export default {
   ],
 
   env:{
-
   },
 
   router: {
@@ -88,34 +87,13 @@ export default {
       'nuxt-global-var',
       {
         data: {
-          AppName:'Qsee',
+          AppName:'Quality Management',
+          info:'Enable auto-login on this browser and speed through checkout every time',
           PREFIX: 'http://127.0.0.1:8000/storage',
         }
       }
     ]
   ],
-  // trailingslash: {
-  //   methods: [
-  //     'GET',
-  //     'HEAD',
-  //   ],
-  // },
-  // redirect: [
-  //   // Redirect options here
-  //   {
-  //     // eslint-disable-next-line
-  //     from: '(?!^\/$|^\/[?].*$)(.*\/[?](.*)$|.*\/$)',
-  //     to: (from, req) => {
-  //       const base = req._parsedUrl.pathname.replace(/\/$/, '');
-  //       const search = req._parsedUrl.search;
-  //       return base + (search != null ? search : '');
-  //     }
-  //   },
-  //   // {
-  //   //   from: '^.*(?<!\/)$',
-  //   //   to: (from, req) => req.url + '/'
-  //   // }
-  // ],
   //todo: this is right way auth syntax
   auth:{
     strategies:{

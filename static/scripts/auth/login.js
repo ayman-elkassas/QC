@@ -10,10 +10,56 @@ export default {
       },
       active: false,
       color: '#7a76cb',
-      token: '',
-      provider: '',
       percent: 0,
+      option: true,
     }
+  },
+  computed: {
+    validEmail() {
+      this.emailValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+        this.request.email
+      )
+      return this.emailValid
+    },
+    getProgress() {
+      let progress = 0
+
+      // at least one number
+
+      if (/\d/.test(this.request.password)) {
+        progress += 20
+      }
+
+      // at least one capital letter
+
+      if (/(.*[A-Z].*)/.test(this.request.password)) {
+        progress += 20
+      }
+
+      // at menons a lowercase
+
+      if (/(.*[a-z].*)/.test(this.request.password)) {
+        progress += 20
+      }
+
+      // more than 5 digits
+
+      if (this.request.password.length >= 6) {
+        progress += 20
+      }
+
+      // at least one special character
+
+      if (/[^A-Za-z0-9]/.test(this.request.password)) {
+        progress += 20
+      }
+
+      this.passwordValid = progress
+      return progress
+    },
+    activeSignIn() {
+      return this.validEmail && this.getProgress > 30
+    },
   },
   methods: {
     async login() {
@@ -40,14 +86,14 @@ export default {
             'success',
             `<i class='bx bx-select-multiple' ></i>`,
             'Login Successfully',
-            'New User added with rules and permissions'
+            'New User added with roles and permissions'
           )
 
           this.loading.close()
           clearInterval(this.interval)
           this.percent = 0
 
-          window.location = '/'
+          this.redirect()
         })
       } catch (e) {
         this.openNotification(

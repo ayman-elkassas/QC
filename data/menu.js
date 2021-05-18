@@ -15,15 +15,15 @@ export const menu = [
     route: undefined,
     sub_items: [
       {
-        icon: '<i class="bx bx-user-x"></i>',
-        title: 'Roles',
-        route: '/role',
-        sub_items: undefined,
-      },
-      {
         icon: '<i class="bx bx-user-voice"></i>',
         title: 'Permissions',
         route: '/role/permission',
+        sub_items: undefined,
+      },
+      {
+        icon: '<i class="bx bx-user-x"></i>',
+        title: 'Roles',
+        route: '/role',
         sub_items: undefined,
       },
       {

@@ -46,67 +46,69 @@
                   <p class="card-text mb-2">
                     Please sign-in to your account and start the adventure
                   </p>
-                  <div class="form-group">
-                    <label class="form-label" for="login-email">Email</label>
-                    <input
-                      id="login-email"
-                      class="form-control"
-                      type="text"
-                      name="login-email"
-                      placeholder="name@example.com"
-                      aria-describedby="login-email"
-                      autofocus=""
-                      tabindex="1"
-                      v-model="request.email"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <div class="d-flex justify-content-between">
-                      <label for="login-password">Password</label
-                      ><a href="page-auth-forgot-password-v2.html"
-                        ><small>Forgot Password?</small></a
-                      >
-                    </div>
-                    <div
-                      class="input-group input-group-merge form-password-toggle"
+                  <br />
+                  <vs-row>
+                    <vs-col
+                      vs-type="flex"
+                      vs-justify="center"
+                      vs-align="center"
+                      w="12"
                     >
-                      <input
-                        id="login-password"
-                        class="form-control form-control-merge"
-                        type="password"
-                        name="login-password"
-                        placeholder="············"
-                        aria-describedby="login-password"
-                        tabindex="2"
-                        v-model="request.password"
-                      />
-                      <div class="input-group-append">
-                        <span class="input-group-text cursor-pointer"
-                          ><i data-feather="eye"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input
-                        id="remember-me"
-                        class="custom-control-input"
-                        type="checkbox"
-                        tabindex="3"
-                      />
-                      <label class="custom-control-label" for="remember-me">
-                        Remember Me</label
+                      <vs-input
+                        v-model="request.email"
+                        required
+                        autofocus
+                        label="Email address"
+                        placeholder="name@neoxero.com"
+                        style="max-width: 100%"
                       >
-                    </div>
-                  </div>
-                  <button
-                    class="btn btn-primary btn-block"
-                    tabindex="4"
-                    @click="login()"
-                  >
-                    Sign In
-                  </button>
+                        <template v-if="validEmail" #message-success>
+                          Email Valid
+                        </template>
+                        <template
+                          v-if="!validEmail && request.email !== ''"
+                          #message-danger
+                        >
+                          Email Invalid
+                        </template>
+                      </vs-input>
+                    </vs-col>
+                  </vs-row>
+                  <br />
+                  <br />
+                  <vs-row>
+                    <vs-col
+                      vs-type="flex"
+                      vs-justify="center"
+                      vs-align="center"
+                      w="12"
+                    >
+                      <vs-input
+                        v-model="request.password"
+                        type="password"
+                        label="Password Account"
+                        placeholder="password"
+                        :progress="getProgress"
+                      >
+                        <template v-if="getProgress >= 100" #message-success>
+                          Secure password
+                        </template>
+
+                        <template v-if="getProgress < 40" #message-danger>
+                          A special character-More than 6 digits-One lower case
+                          letter-An uppercase letter-A number
+                        </template>
+                      </vs-input>
+                    </vs-col>
+                  </vs-row>
+                  <br />
+                  <vs-checkbox v-model="option"> Remember me </vs-checkbox>
+                  <br />
+
+                  <vs-button block :disabled="!activeSignIn" @click="login()">
+                    Sign in
+                  </vs-button>
+
                   <p class="text-center mt-2">
                     <span>New on our platform?</span>
                     <nuxt-link to="/auth/register"
@@ -116,7 +118,6 @@
                 </div>
               </div>
               <!-- /Login-->
-
             </div>
           </div>
         </div>

@@ -5,13 +5,7 @@
       <div class="col-12">
         <div class="alert alert-primary" role="alert">
           <div class="alert-body">
-            <strong>Info:</strong> This layout can be useful for getting started
-            with empty content section. Please check the&nbsp;<a
-              class="text-primary"
-              href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layout-empty.html"
-              target="_blank"
-              >Layout empty documentation</a
-            >&nbsp; for more details.
+            <strong>Info:</strong> {{ $get('info') }}
           </div>
         </div>
       </div>
@@ -38,7 +32,9 @@
                 </div>
               </div>
               <div class="text-center">
-                <h1 class="mb-1 text-white">Congratulations John,</h1>
+                <h1 class="mb-1 text-white">
+                  Welcome {{ $auth.user.full_name }},
+                </h1>
                 <p class="card-text m-auto w-75">
                   You have done <strong>57.6%</strong> more sales today. Check
                   your new badge in your profile.
@@ -91,7 +87,7 @@
         <div class="col-xl-4 col-md-6 col-12">
           <div class="card card-congratulation-medal">
             <div class="card-body">
-              <h5>Congratulations 🎉 John!</h5>
+              <h5>Congratulations 🎉 {{ $auth.user.first_name }}!</h5>
               <p class="card-text font-small-3">You have won gold medal</p>
               <h3 class="mb-75 mt-2 pt-50">
                 <a href="javascript:void(0);">$48.9k</a>

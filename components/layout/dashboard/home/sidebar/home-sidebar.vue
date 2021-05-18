@@ -14,6 +14,16 @@
     >
       <template v-if="!mobile" #logo>
         <img src="~assets/dashboard/logo/multitask.png" alt="avatar" />
+        <h6
+          style="
+            color: whitesmoke;
+            font-style: normal;
+            font-family: 'system-ui';
+            margin-left: 10px;
+          "
+        >
+          {{ $get('AppName') }}
+        </h6>
       </template>
       <template v-else #logo>
         <i

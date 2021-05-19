@@ -64,6 +64,7 @@ export default {
     // { src: '~/plugins/vendors.min.js', mode: 'client' },
     '@/plugins/vuesax',
     '@/plugins/datepicker',
+    '@/plugins/avatar-generator',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

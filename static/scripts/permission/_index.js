@@ -2,7 +2,6 @@ export default {
   name: 'Permission',
   layout: 'dashboard/home',
   data: () => ({
-    active: false,
     search: '',
     allCheck: false,
     page: 1,
@@ -13,6 +12,17 @@ export default {
       group: '',
     },
     data: [],
+    ops: 1,
+    activeP: false,
+    activeDelete: false,
+    operationName: '',
+    editItemId: 1,
+    moduleName: 'Permission',
+    submitName: '',
+    dispatchCall: '',
+    dispatchRefresh: 'allPermissions',
+    instanceSaveReq: {},
+    deleteItemId: 1,
   }),
   beforeCreate() {
     this.$store.dispatch('allPermissions')
@@ -28,33 +38,32 @@ export default {
     },
   },
   methods: {
-    addPermission() {
-      if (
-        (typeof this.request.name).match('string') &&
-        (typeof this.request.group).match('string')
-      ) {
-        this.$store.dispatch('addPermission', this.request).then((res) => {
-          this.active = !this.active
-          this.$store.dispatch('allPermissions').then((r) => null)
-          this.openNotification(
-            'bottom-right',
-            'success',
-            `<i class='bx bx-select-multiple' ></i>`,
-            'Add New Permission Successfully',
-            'User granted roles can add permissions'
-          )
-        })
-      }
+    openAdd() {
+      this.ops = 1
+      this.activeP = !this.activeP
+      this.operationName = 'Add'
+      this.dispatchCall = 'addPermission'
+      this.submitName = this.operationName + ' ' + this.moduleName
+      this.instanceSaveReq = { name: '', group: '' }
     },
-    openNotification(position = null, border, icon, title, text) {
-      this.$vs.notification({
-        border,
-        icon,
-        progress: 'auto',
-        position,
-        title,
-        text,
-      })
+    async openEdit(id) {
+      this.editItemId = id
+      await this.instanceSave()
+      this.ops = 2
+      this.activeP = !this.activeP
+      this.operationName = 'Edit'
+      this.submitName = this.operationName + ' ' + this.moduleName
+      this.dispatchCall = 'editPermission'
+    },
+    instanceSave() {
+      const item = this.data.find((x) => x.id === this.editItemId)
+      const { name, group } = item
+      this.instanceSaveReq = { name, group }
+    },
+    openDelete(id) {
+      this.deleteItemId = id
+      this.activeDelete = !this.activeDelete
+      this.dispatchCall = 'deletePermission'
     },
   },
 }

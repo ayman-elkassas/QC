@@ -15,7 +15,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <vs-button flat primary @click="active = !active">
+              <vs-button flat primary @click="openAdd()">
                 <i class="bx bx-plus"></i> Add Permission</vs-button
               >
             </div>
@@ -40,8 +40,20 @@
                       >
                         Id
                       </vs-th>
-                      <vs-th> Permission name </vs-th>
-                      <vs-th> Group </vs-th>
+                      <vs-th
+                        sort
+                        @click="data = $vs.sortData($event, data, 'name')"
+                      >
+                        Permission name
+                      </vs-th>
+                      <vs-th
+                        sort
+                        @click="data = $vs.sortData($event, data, 'group')"
+                      >
+                        Group
+                      </vs-th>
+                      <vs-th> Edit </vs-th>
+                      <vs-th> Delete </vs-th>
                     </vs-tr>
                   </template>
                   <template #tbody>
@@ -67,6 +79,35 @@
                       <vs-td>
                         {{ tr.group }}
                       </vs-td>
+                      <vs-td>
+                        <vs-row>
+                          <vs-col w="12">
+                            <vs-button
+                              circle
+                              icon
+                              flat
+                              @click="openEdit(tr.id)"
+                            >
+                              <i class="bx bx-edit-alt"></i>
+                            </vs-button>
+                          </vs-col>
+                        </vs-row>
+                      </vs-td>
+                      <vs-td>
+                        <vs-row>
+                          <vs-col w="12">
+                            <vs-button
+                              circle
+                              danger
+                              icon
+                              flat
+                              @click="openDelete(tr.id)"
+                            >
+                              <i class="bx bx-trash-alt"></i>
+                            </vs-button>
+                          </vs-col>
+                        </vs-row>
+                      </vs-td>
                     </vs-tr>
                   </template>
                   <template #footer>
@@ -83,41 +124,30 @@
       </div>
     </div>
 
-    <vs-dialog v-model="active">
-      <template #header>
-        <h4 class="not-margin">Add <b>Permission</b></h4>
-      </template>
+    <!--    add, edit ops-->
+    <dialogue-ops
+      :operation="ops"
+      :active="activeP"
+      :operation-name="operationName"
+      :module-name="moduleName"
+      :submit-name="submitName"
+      :dispatch-call="dispatchCall"
+      :dispatch-refresh="dispatchRefresh"
+      :edit-item-id="editItemId"
+      :instance-save-request="instanceSaveReq"
+    ></dialogue-ops>
 
-      <div class="con-form">
-        <vs-input
-          v-model="request.name"
-          label="Name"
-          placeholder="Permission name"
-        />
-        <br />
-        <br />
-        <vs-input
-          v-model="request.group"
-          label="Group name"
-          placeholder="Group name"
-        />
-      </div>
-
-      <template #footer>
-        <div class="footer-dialog">
-          <vs-button
-            block
-            :disabled="!(request.name && request.group)"
-            @click="addPermission()"
-          >
-            Add Permission
-          </vs-button>
-        </div>
-      </template>
-    </vs-dialog>
+    <!--    delete ops-->
+    <dialogue-delete
+      :active="activeDelete"
+      :module-name="moduleName"
+      :delete-item-id="deleteItemId"
+      :dispatch-call="dispatchCall"
+      :dispatch-refresh="dispatchRefresh"
+    ></dialogue-delete>
   </div>
 </template>
 
-<script src="../../static/scripts/permission/_index.js"></script>
+<script src="static/scripts/permission/_index.js"></script>
 
 <style scoped></style>

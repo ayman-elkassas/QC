@@ -79,21 +79,24 @@ export default {
         await this.$axios.$post(`api/auth/login`, this.request).then((res) => {
           if (typeof res.data.token !== 'undefined') {
             this.$auth.setUserToken(res.data.token, true)
+
+            // welcome screen
+            localStorage.setItem('welcome', '1')
+
+            this.loading.close()
+            clearInterval(this.interval)
+            this.percent = 0
+
+            this.redirect()
+          } else {
+            this.openNotification(
+              'bottom-right',
+              'danger',
+              `<i class='bx bx-select-multiple' ></i>`,
+              'Token is set in wrong way',
+              'New User added with roles and permissions'
+            )
           }
-
-          this.openNotification(
-            'bottom-right',
-            'success',
-            `<i class='bx bx-select-multiple' ></i>`,
-            'Login Successfully',
-            'New User added with roles and permissions'
-          )
-
-          this.loading.close()
-          clearInterval(this.interval)
-          this.percent = 0
-
-          this.redirect()
         })
       } catch (e) {
         this.openNotification(

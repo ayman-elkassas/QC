@@ -180,43 +180,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Index',
-  layout: 'dashboard/home',
-  data() {
-    return {
-      progress: 0,
-      color: '#7a76cb',
-    }
-  },
-  head() {},
-  created() {
-    if (!process.server) {
-      // this.openLoading()
-    }
-  },
-  mounted() {},
-  methods: {
-    openLoading() {
-      const loading = this.$vs.loading({
-        progress: this.progress,
-        background: this.color,
-        color: '#fff',
-      })
-      const interval = setInterval(() => {
-        if (this.progress <= 100) {
-          loading.changeProgress(`${this.progress++}%`)
-        }
-      }, 40)
-      setTimeout(() => {
-        loading.close()
-        clearInterval(interval)
-        this.progress = 0
-      }, 4100)
-    },
-  },
-}
-</script>
+<script src="static/scripts/index/_index.js"></script>
 
 <style scoped></style>

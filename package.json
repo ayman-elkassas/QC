@@ -30,6 +30,7 @@
     "popper.js": "^1.16.1",
     "postcss-svgo": "^5.0.0",
     "sass-loader": "^10.1.1",
+    "vue-letter-avatar": "^0.1.6",
     "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {

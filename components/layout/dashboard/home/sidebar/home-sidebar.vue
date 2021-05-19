@@ -69,11 +69,8 @@
       </div>
       <template #footer>
         <vs-row justify="space-between">
-          <vs-avatar circle badge badge-color="success">
-            <img
-              src="~assets/dashboard/app-assets/images/avatars/2.png"
-              alt=""
-            />
+          <vs-avatar badge history badge-color="success">
+            <vue-letter-avatar :name="$auth.user.first_name" :rounded="false" />
           </vs-avatar>
           <vs-avatar circle color="#fff" @click="collapse()">
             <i class="bx bx-toggle-left"></i>

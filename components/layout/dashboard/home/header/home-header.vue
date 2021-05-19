@@ -481,14 +481,10 @@
                 }}</span
                 ><span class="user-status">{{ $auth.user.email }}</span>
               </div>
-              <span class="avatar"
-                ><img
-                  class="round"
-                  src="~static/home/dashboard/app-assets/images/portrait/small/avatar-s-11.jpg"
-                  alt="avatar"
-                  height="40"
-                  width="40" /><span class="avatar-status-online"></span
-              ></span>
+              <vs-avatar history primary badge badge-color="success">
+                <vue-letter-avatar :name="$auth.user.first_name" />
+                <template #badge> 28 </template>
+              </vs-avatar>
             </a>
             <div
               class="dropdown-menu dropdown-menu-right"
